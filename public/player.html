@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Guide Game – Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="player.js"></script>
+</head>
+<body class="player-page">
+  <div class="player-shell">
+    <header class="player-header">
+      <h1>Player</h1>
+      <a href="/" class="host-back-link">← Back</a>
+    </header>
+
+    <main class="player-main">
+      <section id="join-section">
+        <h2>Join a Room</h2>
+        <div class="form-row">
+          <label>Room Code</label>
+          <input id="room-code-input" maxlength="4" />
+        </div>
+        <div class="form-row">
+          <label>Your Name</label>
+          <input id="player-name-input" maxlength="20" />
+        </div>
+        <button id="join-room-btn" class="primary-btn">Join</button>
+        <p id="join-status" class="status-text"></p>
+      </section>
+
+      <section id="question-section" class="hidden">
+        <div class="question-meta">
+          <span id="player-question-counter"></span>
+          <span id="player-question-type" class="pill"></span>
+        </div>
+        <h2 id="player-question-text"></h2>
+        <div id="player-answer-options" class="answer-options"></div>
+
+        <div class="player-controls">
+          <button id="submit-answer-btn" class="primary-btn">
+            Submit Answer
+          </button>
+          <button id="ready-next-btn" class="secondary-btn hidden">
+            Ready for Next
+          </button>
+        </div>
+
+        <p id="answer-feedback" class="status-text"></p>
+        <p id="answer-explanation" class="explanation-text"></p>
+      </section>
+
+      <section id="player-game-over" class="hidden">
+        <h2>Game Over 🎉</h2>
+        <p id="player-final-message"></p>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
