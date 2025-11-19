@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Guide Game – Host</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="host.js"></script>
+</head>
+<body class="host-page">
+  <div class="host-shell">
+    <header class="host-header">
+      <h1>Study Guide Game – Host</h1>
+      <a href="/" class="host-back-link">← Back</a>
+    </header>
+
+    <section class="host-room">
+      <div class="host-room-info">
+        <button id="create-room-btn" class="primary-btn">
+          Create Room
+        </button>
+
+        <div id="room-details" class="room-details hidden">
+          <p class="room-label">Room Code</p>
+          <p id="room-code" class="room-code">----</p>
+          <p id="host-status" class="host-status">
+            Waiting for players to join…
+          </p>
+        </div>
+      </div>
+
+      <div class="host-players">
+        <h2>Players</h2>
+        <ul id="players-list" class="players-list"></ul>
+      </div>
+
+      <div class="host-controls">
+        <button id="start-game-btn" class="secondary-btn" disabled>
+          Start Game
+        </button>
+      </div>
+    </section>
+
+    <section id="question-section" class="host-question hidden">
+      <div class="question-meta">
+        <span id="question-counter"></span>
+        <span id="question-type" class="pill"></span>
+      </div>
+      <h2 id="question-text"></h2>
+      <ul id="answer-options" class="host-answer-list"></ul>
+    </section>
+
+    <section id="game-over-section" class="host-game-over hidden">
+      <h2>Game Over 🎉</h2>
+      <p>Final scores:</p>
+      <ul id="final-scores" class="players-list"></ul>
+      <p class="host-status">
+        To play again, refresh this page to create a new room.
+      </p>
+    </section>
+  </div>
+</body>
+</html>
